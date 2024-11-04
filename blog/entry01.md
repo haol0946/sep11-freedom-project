@@ -15,11 +15,11 @@ The tool I decided to use was P5 play as it is an extension to P5 which we are l
 a means to bring my vision to life.
 
     P5.Play - A javascript library that makes it easier to create games
-    * Features
-        * Sprites : Create, manipulate, and animate 2D images
-        * Collision : Methods to detect collisions between sprites
-        * Physics : Basic physics allowing for dynamic and realistic movement
-        * User input : Simple way to handle keyboard and mouse inputs
+    • Features
+        • Sprites : Create, manipulate, and animate 2D images
+        • Collision : Methods to detect collisions between sprites
+        • Physics : Basic physics allowing for dynamic and realistic movement
+        • User input : Simple way to handle keyboard and mouse inputs
 
 ## 2. What I'm going to make
 So, what I decided to create is a mash-up of my original ideas: teaching people the basics of photography through the exposure triangle ISO, shutter speed, and aperture which each manipulate the photo in different ways. I envisioned a 2D platformer similar to Mario, where
