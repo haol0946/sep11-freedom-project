@@ -28,7 +28,7 @@ the knowledge you gained along the way, and hints to edit photos and ultimately 
 
 ### Skills : One skill I've learned/grown
 
-* How to properly google. Although this seems quite a simple and basic task/skill to do google only allows you search for very broad topics and for this I had project in the beginning I was researching how to incorperate a photo editor using Javascript trying to google very
+• How to properly google. Although this seems quite a simple and basic task/skill to do google only allows you search for very broad topics and for this I had project in the beginning I was researching how to incorperate a photo editor using Javascript trying to google very
 specfic things only to realize that the idea most likely wasn't going to work out in the long run. However as I went onto my backup ideas of platformers and an escape room I had to continually look for ways to incorperate these ideas together eventually realizing I would be
 able to combine my ideas together using P5 play and the photo editor.
 
