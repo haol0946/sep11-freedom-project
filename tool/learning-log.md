@@ -70,7 +70,47 @@ function draw() {
 ```
 Ground sprite would stay still dude to its 'static' nature even though there is a gravity of 10
 
+### 11/10/24
+*https://codehs.com/tutorial/ryan/introduction-to-p5play
 
+User Input & Sprite interactions
+
+* Keyboard Inputs
+	* kb.presses(key letter or name)
+		* At the time of press
+	* kb.pressing(key letter or name)
+		* The duration of press
+* Mouse Inputs
+	* sprite.mouse.presses()
+		* At the time of click on sprite
+	* sprite.mouse.pressing()
+		* The duration of click on sprite
+	* sprite.mouse.dragging()
+		* If user is clicking AND dragging sprite around
+* Sprite Interactions
+	* sprite1.overlaps(sprite2)
+		* The moment of overlap
+	* sprite1.overlapping(sprite2)
+		* The duration of overlap
+	* sprite1.collides(sprite2)
+		* The moment of collision
+	* sprite1.colliding(sprite2)
+		* The duration of collision
+
+```js
+   if (ball.mouse.dragging()) {
+        ball.moveTowards(mouse, 0.1);
+    }
+    if (kb.pressing('up')) {
+        brick1.width += 2;
+        brick2.width += 2;
+    } else if (kb.pressing('down')) {
+        brick1.width -= 2;
+        brick2.width -= 2;
+    }
+```
+* If mouse is dragging ball = Ball moves towards mouse
+* If kb is being pressed with up then increase brick 1 & 2 width or if pressing down then brick 1 & 2 minus width
 
 <!--
 * Links you used today (websites, videos, etc)
