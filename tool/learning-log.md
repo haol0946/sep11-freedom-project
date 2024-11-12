@@ -19,7 +19,7 @@
 * sprite.text = "p5"; = What text
 ## Physics
 * Dynamic Physics!!! = Able to freely move AND be affected by gravity
-* ```js
+ ```js
 function setup() {
 	new Canvas(300, 350);
 
