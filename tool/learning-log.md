@@ -42,7 +42,22 @@ function draw() {
 * ^ Created circle and square sprite with circle being static & not moving with square falling ontop of it
 * Going to finish looking at p5play website and look at https://codehs.com/tutorial/ryan/introduction-to-p5play to see overlaping details or details missed
 
+### 11/6/24
+*https://codehs.com/tutorial/ryan/introduction-to-p5play
+## Physics
 
+* Collider types
+	* Dynamic
+		* Can collide
+		* Moves with
+			* Code, Collisions, Gravity
+	* Kinematic
+		* Can collide
+		*Moves with Code
+	* Static
+		* Can collide
+	* None
+		* Moves with Code	
 
 
 
