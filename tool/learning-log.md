@@ -19,7 +19,7 @@
 * sprite.text = "p5"; = What text
 ## Physics
 * Dynamic Physics!!! = Able to freely move AND be affected by gravity
- ```js
+* ```js
 function setup() {
 	new Canvas(300, 350);
 
@@ -38,9 +38,10 @@ function draw() {
 	clear();
 }
 ```
-
-* ^ Created circle and square sprite with circle being static & not moving with square falling ontop of it
+^ Created circle and square sprite with circle being static & not moving with square falling ontop of it
 * Going to finish looking at p5play website and look at https://codehs.com/tutorial/ryan/introduction-to-p5play to see overlaping details or details missed
+
+
 
 ### 11/4/24
 *https://codehs.com/tutorial/ryan/introduction-to-p5play
@@ -57,7 +58,17 @@ function draw() {
 	* Static
 		* Can collide
 	* None
-		* Moves with Code	
+		* Moves with Code
+
+```js
+    world.gravity.y = 10;
+
+
+    ground.y = 200;
+    ground.friction = 0.01;
+    ground.collider = 'static';
+```
+Ground sprite would stay still dude to its 'static' nature even though there is a gravity of 10
 
 
 
