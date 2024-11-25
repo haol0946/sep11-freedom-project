@@ -112,6 +112,107 @@ User Input & Sprite interactions
 * If mouse is dragging ball = Ball moves towards mouse
 * If kb is being pressed with up then increase brick 1 & 2 width or if pressing down then brick 1 & 2 minus width
 
+### 11/19/24
+*https://codehs.com/tutorial/ryan/introduction-to-p5play
+
+## Groups + Tile system
+
+Groups
+* Allows you to group sprites
+	* Each sprite will have same color, position, diameter, and bounciness
+
+```js
+let ballGroup = new Group();
+ballGroup.diameter = 20;
+ballGroup.y = -20;
+ballGroup.vel.y = 2;
+ballGroup.bounciness = 0.5;
+ballGroup.color = 'lightblue';
+```
+*I.e, all of the sprites in this group will have these specfic properties
+
+`
+let ball = new ballGroup.Sprite();
+`
+*Allows you to create a sprite from the group
+
+
+Tile system
+* A grid like structure (Similar to Arrays but not exactly)
+	* "." Periods or " " Empty spaces to mark blank spots
+	* "var".tile = " " aka you can choose your tile symbol
+
+
+
+`
+   tiles.tile = '+';
+`
+
+* Would create a new tile group called tiles with + being used for tiles
+
+```js
+  new Tiles(
+    	[
+        ".....+++++.....",
+        "....+++++++.....",
+        ".....+++++......",
+        "......+++.......",
+        ".......+........",
+        ".......+........",
+        "....+++++++.....",
+        ".......+........",
+        ".......+........",
+        "......+.+......",
+        ".....+...+......",
+    	],
+    );
+```
+* Would create a stick figure with "+" as "tiles"
+
+### 11/22/24
+*https://codehs.com/tutorial/ryan/introduction-to-p5play
+
+## Sprite Image & Animation
+
+* preload()
+	* Function that makes sure loadImage runs first
+		* loadImage()
+			* Loads image from local sever (MUST BE INSIDE preload)
+* addAni()
+	* What your adding ani to + name of ani + sprite sheet + Dimensions of ONE image + row + # of imgs (Frames) + Frame delay
+
+
+```js
+let idleSheet = loadImage('______');
+    let walkingSheet = loadImage('______');
+    let runningSheet = loadImage('______');
+
+```
+* Creating different images for each "Frame"
+
+
+```js
+  character.addAni('idle', idleSheet, {w: 128, h: 82, row: 0, frames: 6, frameDelay: 8});
+    character.addAni('walking', walkingSheet, {w: 128, h: 83, row: 0, frames: 8, frameDelay: 8});
+    character.addAni('running', runningSheet, {w: 128, h: 82, row: 0, frames: 8, frameDelay: 8});
+```
+* Examples of addAni
+
+
+
+
+```js
+    if (kb.pressing('arrowRight')) {
+        // Sprite runs faster if user presses r key
+        if (kb.pressing('r')) {
+            character.ani = 'running';
+            character.vel.x = 4;
+        } else {
+            character.ani = 'walking';
+            character.vel.x = 2;
+        }
+```
+* Example of animations working with user input
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
