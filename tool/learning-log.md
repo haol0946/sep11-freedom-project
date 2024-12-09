@@ -112,6 +112,7 @@ User Input & Sprite interactions
 * If mouse is dragging ball = Ball moves towards mouse
 * If kb is being pressed with up then increase brick 1 & 2 width or if pressing down then brick 1 & 2 minus width
 
+
 ### 11/19/24
 *https://codehs.com/tutorial/ryan/introduction-to-p5play
 
@@ -213,6 +214,57 @@ let idleSheet = loadImage('______');
         }
 ```
 * Example of animations working with user input
+
+### 12/2/24
+*https://p5play.org/learn/sprite.html?page=6
+
+## Overlaps
+
+Overlap : sprite.overlap(target, callback);
+    * Inside draw function
+    * Boolean (Will return true)
+    * Function
+    * On first frame will return true
+
+
+```js
+ if (sprite1.overlap(sprite2)) {
+    sprite1.shapeColor = color(255, 0, 0);
+  }
+  else {
+    sprite1.shapeColor = color(255);
+  }
+```
+
+* IF Overlap (True) then returns red color IF no overlap (False) then reset color
+
+### 12/7/24
+*https://p5play.org/learn/sprite.html?page=7
+
+## Rotation
+
+Rotation
+    * If rotation property if directly changed then sprite = teleported to angle
+        * Rotation (Teleport) - Teleports at a certain angle
+        * Rotation Speed - Will rotate at a constant speed
+        * Rotate - Will rotate at a certain angle at a certain speed
+        * RotateTo - Will rotate to a specfic angle
+        * RotateTowards - Will rotate towards something i.e, a mouse
+
+```js
+
+if (keyIsDown(LEFT_ARROW)) {
+    sprite.rotation(-15, 3);  // Counterclockwise
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    sprite.rotation(15, 3);  // Clockwise
+  }
+
+```
+* On left arrow press rotate left
+* On right arrow press rotate right
+
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
