@@ -1,6 +1,7 @@
 # Entry 2
-##### X/X/XX
+##### 12/14/24
 
+### Introduction
 Text
 
 [Previous](entry01.md) | [Next](entry03.md)
