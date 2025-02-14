@@ -20,7 +20,6 @@
     - [ ] Level 1
       - [ ] Moving to the next level
       - [ ] Points (Cameras or Lightning)
-      - [ ]
     - [ ] Level 2
       - [ ] Moving to the next level
       - [ ] Points (Cameras or Lightning)
@@ -32,7 +31,6 @@
     - [ ] Background
     - [ ] Sprites
     - [ ] Basic animation
-    - [ ]
   - [ ] Photoeditor (deadline: 4/14)
     - [ ] Importing editor
     - [ ] Importing photos
