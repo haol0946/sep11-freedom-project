@@ -11,9 +11,9 @@
 
 - [ ] MVP (deadline: 4/21)
   - [ ] Basics (deadline: 2/25)
-    - [ ] Point system
-    - [ ] Controls
-    - [ ] Text / Explanation
+    - [ ] Point system i.e, keeping track of collectibles 
+    - [ ] Controls i.e, WASD
+    - [ ] Text / Explanation i.e, explaining photography
     - [ ] Title
     - [ ] Everything else I can't think about right now
   - [ ] Levels (deadline: 3/31 Working along side Art)
@@ -28,9 +28,9 @@
       - [ ] Points (Cameras or Lightning)
       - [ ] Ending / Moving to editor
   - [ ] Art (deadline: 3/31 Working along side Levels)
-    - [ ] Background
-    - [ ] Sprites
-    - [ ] Basic animation
+    - [ ] Background 
+    - [ ] Sprites i.e, players, collectibles, and all other sprites
+    - [ ] Basic animation i.e, running, walking, jumping
   - [ ] Photoeditor (deadline: 4/14)
     - [ ] Importing editor
     - [ ] Importing photos
@@ -41,6 +41,7 @@
 - [ ] Better Animations (Smoother)
 - [ ] Making everything look better (Aesthetic)
 - [ ] Photo Selector (For editor)
+- [ ] More controls (Arrow keys)
 
 
 <!-- EXAMPLE
