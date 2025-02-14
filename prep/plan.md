@@ -1,7 +1,7 @@
 # Plan
 
-## Tool: 
-## Product: 
+## Tool: P5 Play
+## Product: 2D platformer + Photoeditor
 
 ---
 
@@ -9,13 +9,40 @@
 
 #### MVP
 
-- [ ] Task (deadline: X)
-  - [ ] Subtask (deadline: X)
+- [ ] MVP (deadline: 4/21)
+  - [ ] Basics (deadline: 2/25)
+    - [ ] Point system
+    - [ ] Controls
+    - [ ] Text / Explanation
+    - [ ] Title
+    - [ ] Everything else I can't think about right now
+  - [ ] Levels (deadline: 3/31 Working along side Art)
+    - [ ] Level 1
+      - [ ] Moving to the next level
+      - [ ] Points (Cameras or Lightning)
+      - [ ]
+    - [ ] Level 2
+      - [ ] Moving to the next level
+      - [ ] Points (Cameras or Lightning)
+    - [ ] Level 3
+      - [ ] Moving to the next level
+      - [ ] Points (Cameras or Lightning)
+      - [ ] Ending / Moving to editor
+  - [ ] Art (deadline: 3/31 Working along side Levels)
+    - [ ] Background
+    - [ ] Sprites
+    - [ ] Basic animation
+    - [ ]
+  - [ ] Photoeditor (deadline: 4/14)
+    - [ ] Importing editor
+    - [ ] Importing photos
+    - [ ] Connecting editor & photos
 
 #### Beyond MVP
 
-- [ ] Task
-  - [ ] Subtask
+- [ ] Better Animations (Smoother)
+- [ ] Making everything look better (Aesthetic)
+- [ ] Photo Selector (For editor)
 
 
 <!-- EXAMPLE
