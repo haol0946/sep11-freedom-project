@@ -267,6 +267,35 @@ if (keyIsDown(LEFT_ARROW)) {
 * On left arrow press rotate left
 * On right arrow press rotate right
 
+### 3/2/25
+*https://www.youtube.com/watch?v=5aHBK7Yw8xs&t=367s&ab_channel=TechHeadOnline
+
+## Collectibles
+
+* First create the variable for the collectible
+  * Variable = loadimage('image')
+* Next create a group of collectibles
+  * C = new Group()
+* Could add Animations (Beyond)
+* Give the collectibles physics i.e, static
+* Add collectibles to the map (Could use tiles or other means of making level)
+* Removing the coins
+  * Once player overlaps with coin then run function to remove the coin
+
+Example code
+
+```js
+Variable = loadimage('image')
+C = new Group()
+c.addanis(){
+  Code here
+}
+play.overlaps(coin, (p,c) = {
+  c.remove();
+})
+```
+
+
 
 <!--
 * Links you used today (websites, videos, etc)
