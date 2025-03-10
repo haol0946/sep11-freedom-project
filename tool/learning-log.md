@@ -295,7 +295,40 @@ play.overlaps(coin, (p,c) = {
 })
 ```
 
+### 3/8/25
+*https://www.youtube.com/watch?v=CuC4sZ5p3Hw&t=1s
 
+## Levels
+
+* First have an end point i.e, door, portal, or gate
+  * Variable = loadimage('image') (exact same as for coins)
+* Next once player overlaps with endpoint then run the next levels function
+* In the next levels function
+  * Have starting location (Same starting pos? Or different?)
+  * Set speed (Most likely 0)
+  * Remove old map (tileMap.remove)
+  * Make new map (Just make a completely new map)
+
+Example Code
+
+```js
+
+Variable = loadimage('image')
+
+player.overlaps (door, (p,d)=>{
+ levelnum()  // (AFTER overlap THEN runs levelNum function)
+})
+
+function levelnum(){
+tileMap.remove()
+tileMap = new Tiles (
+  [
+    Insert tile symbols here
+  ]
+)
+
+}
+```
 
 <!--
 * Links you used today (websites, videos, etc)
