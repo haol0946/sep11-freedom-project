@@ -330,6 +330,52 @@ tileMap = new Tiles (
 }
 ```
 
+### 3/22/25
+*https://www.youtube.com/watch?v=IHBqtJGJDXU
+
+## Enemies
+
+* Create variable
+* Load img
+* Make the enemy into its own group
+  * Add the variables for the enemy
+* Scale enemy up or down
+* Jumping ontop of enemy removes it
+* Running to enemy restarts you
+
+Example code
+
+```js
+enemy = new group (){
+enemy.w= 51;
+enemy.g = 50;
+enemy.tile = "x"
+etc
+etc
+    }
+
+```
+Creating the new group, Making var and loading is same as before (Above)
+
+When character overlaps w enemy (Below)
+```js
+groundSensor.Overlaps(___){
+if(player.vel.y = 0)
+e.remove
+
+}
+
+
+
+player.overlaps(___){
+  player.speed = 0
+  player.x = 50
+  player.y = 50
+}
+
+
+```
+
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
