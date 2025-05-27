@@ -4,26 +4,302 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5play@3/planck.min.js"></script>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5play@3/p5play.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
             /* CSS */
-            
+
         </style>
-        
+
         <title>Title</title>
+
+
     </head>
     <body>
         <!-- HTML -->
-        
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="script.js"></script> -->
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
+
             // JS
-            
-            
+let player, playing, groundsensor
+let playerImg, bgImg ,grassTM,backgroundimg,startScreen, door, doorTop, collect
+let tileSize = 32
+let jump = 35
+let score = 0
+function preload()
+{
+    playerImg = loadImage('playerIdle.png')
+    player = new Sprite(50, 400, 100, 150);
+    player.spriteSheet = playerImg
+    player.rotationLock = true
+    player.friction = 0;
+
+    player.addAnis ({
+        stand:{row:0, frames:1, scale: 2},
+        run: {row:0, frames:4, scale: 2},
+    })
+   // player.ani = 'run'
+    grassPM = loadImage('grassMid.png')
+    backgroundimg = loadImage('BG.png')
+    startScreen = loadImage('start.jpg')
+    door = loadImage('door.png')
+    doorTop = loadImage('doorTop.png')
+    collect = loadImage('thunder.png')
+
+    f4 = new Group()
+    f4.w = 32
+    f4.h = 32
+    f4.tile = "c"
+    f4.collider = 'none';
+    f4.image = collect;
+}
+
+
+
+function setup() {
+    createCanvas(1000, 1000);  // Canvas
+    playing = false
+    world.autoStep = false;
+    world.gravity.y=12;
+    player.scale = 0.4
+    player.w = 8
+    player.debug = true;
+player.overlaps(f4, (p, c) => {
+    c.remove();
+    score+=1
+})
+
+
+    groundSensor = new Sprite(player.x, player.y + player.h/2,player.w/2,1)
+    groundSensor.visible = false;
+    groundSensor.mass = 0.1;
+    let  joint = new GlueJoint(player,groundSensor)
+    joint.visible = false;
+
+    walkable = new Group()
+    walkable.layer = 1;
+
+    f1 = new walkable.Group()
+    f1.w = tileSize
+    f1.h = tileSize
+    f1.tile = "t"
+    f1.collider = 'static'
+    f1.image = doorTop;
+
+    f2 = new walkable.Group()
+    f2.w = tileSize
+    f2.h = tileSize
+    f2.tile = "d"
+    f2.collider = 'static'
+    f2.image = door;
+
+    f3 = new walkable.Group()
+    f3.w = tileSize
+    f3.h = tileSize
+    f3.tile = "="
+    f3.collider = 'static';
+    f3.image = grassPM;
+
+    player.overlaps(f2,(p,d) => {
+        levelTwo()
+  })
+
+      player.overlaps(f1,(p,d) => {
+        levelThree()
+  })
+
+
+tileMap = new Tiles(
+    	[
+        "........................",
+        ".......................",
+        ".......t................",
+        ".........c.............",
+        ".......d..............",
+        ".......===...c.........",
+        "........................",
+        ".............=..........",
+        "........................",
+        ".......................",
+        "........====.............",
+        ".....=..................",
+        "........................",
+        "===............c.......",
+        "........................",
+        "==================",
+    	],
+        32,
+        32,
+        32,
+        32,
+    {
+        tileTypes: {
+            'c': f4
+        },
+        colliders: [
+            ['=', 'static'],
+            ['g', 'static'],
+            ['d', 'static'],
+            ['.', 'none']
+        ]
+    }
+);
+
+
+}
+
+function levelTwo(){
+
+    player.speed = 0
+    player.x = 48
+    player.y = 50
+    tileMap.remove();
+    tileMap = new Tiles(
+    	[
+
+        "....t...............",
+        "....t.c.............",
+        "....d..............",
+        "....===...........",
+        "...........c......",
+        "...................",
+        "..........==.....",
+        "......c.............",
+        "..................",
+        "......===...........",
+        "..................",
+        ".................",
+        "...........==.....",
+        "..................",
+        "..................",
+         "..................",
+        "..............====",
+        "....................",
+        "...................",
+        "==================",
+    	],
+        32,
+        32,
+        32,
+        32,
+  {
+}
+    );
+
+}
+
+function levelThree(){
+
+    player.speed = 0
+    player.x = 48
+    player.y = 400
+    tileMap.remove();
+    tileMap = new Tiles(
+    	[
+
+        "..............t....",
+        "............c.....",
+        "..............d...",
+        "............===...",
+        ".......c.........",
+        "...................",
+        ".......==........",
+        ".c.................",
+        "..................",
+        ".===................",
+        "..................",
+        ".................",
+        ".......==........",
+        "..................",
+        "..................",
+         "..................",
+        "...........====...",
+        "....................",
+        "...................",
+        "==================",
+    	],
+        32,
+        32,
+        32,
+        32,
+  {
+}
+    );
+
+}
+
+function draw() {
+  clear()
+
+  if(playing)
+  {
+    world.step()
+    background(backgroundimg)
+    fill(0)
+   // textsize(10);
+    text("Score:"+score,5,50)
+    camera.x = player.x +52
+    camera.y = player.y + 50
+    player.visible = true;
+    walkable.visible = true;
+      f4.visible = true;
+    movement()
+    //tileMap.debug = true; // Show all tile hitboxes
+    //f3.debug = true;      // Show group hitboxes
+
+  }
+    else
+      {
+      background(startScreen)
+     player.visible = false;
+      walkable.visible = false;
+      f4.visible = false;
+    textSize(32);
+    fill(255);
+    text("A = Move Left, D = Move Right, Space = Jump",15,50)
+
+     if(kb.presses('space')){
+          playing = true
+   }
+  }
+
+
+function movement ( ){
+   if(kb.pressing('a')){
+        player.vel.x = -2;
+        player.ani = 'run'
+        player.mirror.x = true;
+    }
+   else if(kb.pressing('d')){
+        player.vel.x = 2;
+        player.ani = 'run'
+        player.mirror.x = true;
+    }
+    else {
+        player.ani = 'stand'
+        player.vel.x = 0;
+    }
+
+if(kb.presses('space') && groundSensor.overlapping(walkable)){
+        player.vel.y = jump;
+    }
+
+}
+
+
+}
+
+
+
+
+
         </script>
     </body>
 </html>
